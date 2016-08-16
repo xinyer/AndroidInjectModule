@@ -1,4 +1,4 @@
-package wx.com.androidinjectmodule.di;
+package wx.com.androidinjectmodule.di.module;
 
 import android.app.Activity;
 
@@ -7,14 +7,14 @@ import dagger.Provides;
 
 @Module
 public class ActivityModule {
-    private final Activity activity;
+    private Activity activity;
 
     public ActivityModule(Activity activity) {
         this.activity = activity;
     }
 
     @Provides
-    @PerActivity Activity activity() {
+    public Activity provideActivity() {
         return this.activity;
     }
 }
